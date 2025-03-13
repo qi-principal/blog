@@ -1,0 +1,1155 @@
+:root {
+    /* 春季 - 默认主题 */
+    --primary-color: #88c9a1;
+    --secondary-color: #f8c3cd;
+    --accent-color: #e0ebaf;
+    --text-color: #2c3e50;
+    --light-text: #4a5568;
+    --bg-color: #f9f9f5;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --ink-light: rgba(44, 62, 80, 0.7);
+    --ink-dark: rgba(44, 62, 80, 0.9);
+    --scroll-color: #e8d4b9;
+    --scroll-shadow: rgba(0, 0, 0, 0.1);
+    --season-texture: url('img/texture-spring.png');
+    --season-bg: url('img/bg-spring.jpg');
+    --season-pattern: url('img/pattern-spring.png');
+}
+
+/* 夏季主题变量 */
+.theme-summer {
+    --primary-color: #59b9c6;
+    --secondary-color: #2a6d7c;
+    --accent-color: #bce6eb;
+    --text-color: #2c3e50;
+    --light-text: #4a5568;
+    --bg-color: #f5f9fa;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --ink-light: rgba(44, 62, 80, 0.7);
+    --ink-dark: rgba(44, 62, 80, 0.9);
+    --scroll-color: #e2eef1;
+    --scroll-shadow: rgba(0, 0, 0, 0.1);
+    --season-texture: url('img/texture-summer.png');
+    --season-bg: url('img/bg-summer.jpg');
+    --season-pattern: url('img/pattern-summer.png');
+}
+
+/* 秋季主题变量 */
+.theme-autumn {
+    --primary-color: #c97c5d;
+    --secondary-color: #e8b860;
+    --accent-color: #fad689;
+    --text-color: #3d2c29;
+    --light-text: #5a463f;
+    --bg-color: #f9f7f5;
+    --card-bg: rgba(255, 250, 245, 0.85);
+    --ink-light: rgba(61, 44, 41, 0.7);
+    --ink-dark: rgba(61, 44, 41, 0.9);
+    --scroll-color: #f4d9c6;
+    --scroll-shadow: rgba(0, 0, 0, 0.1);
+    --season-texture: url('img/texture-autumn.png');
+    --season-bg: url('img/bg-autumn.jpg');
+    --season-pattern: url('img/pattern-autumn.png');
+}
+
+/* 冬季主题变量 */
+.theme-winter {
+    --primary-color: #9db2ce;
+    --secondary-color: #556c88;
+    --accent-color: #d2dde9;
+    --text-color: #2e3b4e;
+    --light-text: #4a5c78;
+    --bg-color: #f5f7f9;
+    --card-bg: rgba(250, 252, 255, 0.85);
+    --ink-light: rgba(46, 59, 78, 0.7);
+    --ink-dark: rgba(46, 59, 78, 0.9);
+    --scroll-color: #e5ebf2;
+    --scroll-shadow: rgba(0, 0, 0, 0.1);
+    --season-texture: url('img/texture-winter.png');
+    --season-bg: url('img/bg-winter.jpg');
+    --season-pattern: url('img/pattern-winter.png');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+@font-face {
+    font-family: 'XingKai';
+    src: url('fonts/LXGWWenKaiLite-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FangSong';
+    src: url('fonts/FangSong.ttf') format('truetype');
+}
+
+body {
+    font-family: 'FangSong', serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    background-image: var(--season-bg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--season-texture);
+    opacity: 0.08;
+    z-index: -1;
+    pointer-events: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'XingKai', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+/* 页面容器 */
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 页面内容区 */
+.content-wrapper {
+    flex: 1;
+    padding: 2rem 0;
+    position: relative;
+}
+
+/* 导航 */
+header {
+    background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    font-family: 'XingKai', serif;
+}
+
+.site-title {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem 0;
+    font-family: 'XingKai', serif;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+.season-switcher {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 1rem;
+}
+
+.season-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, border 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.season-btn:hover {
+    transform: scale(1.1);
+    border-color: rgba(0,0,0,0.3);
+}
+
+.season-btn.active {
+    border-color: var(--text-color);
+    transform: scale(1.1);
+}
+
+.season-spring { background-color: #88c9a1; }
+.season-summer { background-color: #59b9c6; }
+.season-autumn { background-color: #c97c5d; }
+.season-winter { background-color: #9db2ce; }
+
+/* 页面标题区 */
+.page-title-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.page-title-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.page-title-section h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--light-text);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* 内容容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* 古风卷轴式卡片 */
+.scroll-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.scroll-card::before,
+.scroll-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-color: var(--scroll-color);
+    box-shadow: 0 0 10px var(--scroll-shadow);
+}
+
+.scroll-card::before {
+    top: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.scroll-card::after {
+    bottom: 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.scroll-card-content {
+    padding: 2.5rem 2rem;
+    position: relative;
+}
+
+/* 古风分隔线 */
+.ink-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--ink-light) 20%, var(--ink-dark) 50%, var(--ink-light) 80%, transparent);
+    margin: 2rem 0;
+    position: relative;
+}
+
+.ink-divider::before {
+    content: '•';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--ink-dark);
+    font-size: 1.2rem;
+}
+
+/* 项目卡片网格 */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+/* 项目卡片 */
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    cursor: pointer;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.scroll-top,
+.scroll-bottom {
+    height: 20px;
+    background-color: var(--scroll-color);
+    position: relative;
+    z-index: 2;
+}
+
+.scroll-top {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.scroll-bottom {
+    border-top: 1px solid rgba(0,0,0,0.05);
+    margin-top: auto;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-image: var(--season-pattern);
+    background-size: 200px;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-opacity: 0.1;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.project-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.project-desc {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: var(--light-text);
+    flex: 1;
+}
+
+.project-progress {
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    height: 6px;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.project-season {
+    position: relative;
+    padding-left: 20px;
+}
+
+.project-season::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+/* 春季卡片样式 */
+.spring-style .card-content {
+    background-color: rgba(248, 255, 240, 0.85);
+    border-left: 3px solid #88c9a1;
+}
+
+/* 夏季卡片样式 */
+.summer-style .card-content {
+    background-color: rgba(240, 250, 255, 0.85);
+    border-left: 3px solid #59b9c6;
+}
+
+/* 秋季卡片样式 */
+.autumn-style .card-content {
+    background-color: rgba(255, 248, 240, 0.85);
+    border-left: 3px solid #c97c5d;
+}
+
+/* 冬季卡片样式 */
+.winter-style .card-content {
+    background-color: rgba(245, 250, 255, 0.85);
+    border-left: 3px solid #9db2ce;
+}
+
+/* 学习时间轴 */
+.timeline {
+    position: relative;
+    margin: 3rem 0;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, 
+                               transparent, 
+                               var(--primary-color) 10%, 
+                               var(--primary-color) 90%, 
+                               transparent);
+}
+
+.timeline-item {
+    margin-bottom: 4rem;
+    position: relative;
+    width: 100%;
+}
+
+.timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 2rem);
+}
+
+.timeline-item:nth-child(even) {
+    padding-left: calc(50% + 2rem);
+}
+
+.timeline-content {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border: 4px solid var(--bg-color);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    right: -60px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    left: -60px;
+}
+
+.timeline-date {
+    position: absolute;
+    top: 20px;
+    font-family: 'XingKai', serif;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.timeline-item:nth-child(odd) .timeline-date {
+    right: calc(-50% + 4rem);
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+    left: calc(-50% + 4rem);
+}
+
+.timeline-title {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.timeline-desc {
+    line-height: 1.6;
+    color: var(--light-text);
+}
+
+/* 关于我页面 */
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.about-image {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    min-height: 400px;
+    background-image: var(--season-bg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.about-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+.about-content {
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.about-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.about-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.about-content p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--light-text);
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.skill-tag {
+    background-color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* 项目详情页 */
+.project-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.project-detail-image {
+    background-color: var(--accent-color);
+    min-height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+}
+
+.project-info {
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.project-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.project-info h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.project-stat {
+    display: flex;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 100px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    margin-bottom: 0.3rem;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.project-desc-full {
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--light-text);
+}
+
+.milestone-list {
+    margin-top: 2rem;
+}
+
+.milestone-list h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.milestone {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.milestone-date {
+    min-width: 100px;
+    font-family: 'XingKai', serif;
+    color: var(--primary-color);
+}
+
+.milestone-text {
+    line-height: 1.6;
+    color: var(--light-text);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.milestone-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+/* 首页展示卡片 */
+.featured-section {
+    margin: 4rem 0;
+    padding: 0 2rem;
+}
+
+.featured-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.featured-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.featured-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.featured-image {
+    height: 200px;
+    background-color: var(--secondary-color);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.featured-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.3rem 0.8rem;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 20px;
+}
+
+.featured-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.featured-content p {
+    line-height: 1.6;
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+}
+
+.featured-link {
+    margin-top: auto;
+    text-align: right;
+    color: var(--primary-color);
+    font-weight: 500;
+    position: relative;
+    padding-right: 20px;
+}
+
+.featured-link::after {
+    content: '→';
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+}
+
+.featured-card:hover .featured-link::after {
+    transform: translateX(5px);
+}
+
+/* 页脚 */
+footer {
+    background: linear-gradient(0deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-quote {
+    font-family: 'XingKai', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    position: relative;
+    display: inline-block;
+    padding: 0 2rem;
+}
+
+.footer-quote::before,
+.footer-quote::after {
+    content: '"';
+    position: absolute;
+    top: 0;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.footer-quote::before {
+    left: 0;
+}
+
+.footer-quote::after {
+    right: 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.footer-links a {
+    color: var(--light-text);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    margin-top: 1.5rem;
+}
+
+/* 动画元素 */
+.seasonal-element {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 四季特有元素 */
+.spring-element {
+    width: 20px;
+    height: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 0 20px 0 20px;
+    opacity: 0.6;
+    animation: fall 10s linear infinite;
+}
+
+.summer-element {
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.3;
+    transform: scale(0);
+    animation: ripple 5s linear infinite;
+}
+
+.autumn-element {
+    width: 18px;
+    height: 25px;
+    background-color: var(--secondary-color);
+    border-radius: 25% 75% 35% 65% / 50% 50% 50% 50%;
+    opacity: 0.7;
+    animation: fall-rotate 12s linear infinite;
+}
+
+.winter-element {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: snow-fall 8s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        top: -10%;
+        transform: rotate(0deg) translateX(0);
+    }
+    100% {
+        top: 100%;
+        transform: rotate(360deg) translateX(100px);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes fall-rotate {
+    0% {
+        top: -10%;
+        transform: rotate(0deg) translateX(0);
+    }
+    50% {
+        transform: rotate(180deg) translateX(50px);
+    }
+    100% {
+        top: 100%;
+        transform: rotate(360deg) translateX(-20px);
+    }
+}
+
+@keyframes snow-fall {
+    0% {
+        top: -10%;
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        top: 100%;
+        transform: translateX(-20px);
+    }
+}
+
+/* 页面过渡动画 */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.page-transition.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.transition-loader {
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--primary-color);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .season-switcher {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    
+    .page-title-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .timeline-item {
+        padding: 0 !important;
+    }
+    
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-content {
+        margin-left: 40px;
+    }
+    
+    .timeline-content::before {
+        left: -30px !important;
+        right: auto !important;
+    }
+    
+    .timeline-date {
+        /* 重置定位方式 */
+        position: static !important; /* 改为静态定位而非相对定位 */
+        display: block;
+        
+        /* 明确的外边距和内边距 */
+        margin: 0 0 1rem 0;
+        padding: 0.5rem 1rem;
+        
+        /* 醒目的视觉效果 */
+        background-color: var(--accent-color);
+        color: var(--text-color);
+        font-weight: 500;
+        font-size: 1.2rem;
+        font-family: 'XingKai', serif;
+        
+        /* 边框和形状 */
+        border-left: 3px solid var(--primary-color);
+        border-radius: 0 4px 4px 0;
+        
+        /* 确保可见性 */
+        z-index: 5;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        
+        /* 文本对齐 */
+        text-align: left;
+        
+        /* 确保不会被截断 */
+        overflow: visible;
+        width: auto;
+        max-width: 100%;
+    }
+    
+    /* 增加明显的悬停效果 */
+    .timeline-date:hover {
+        transform: translateX(5px);
+        background-color: var(--primary-color);
+        color: white;
+        transition: all 0.3s ease;
+    }
+    .about-container,
+    .project-detail {
+        grid-template-columns: 1fr;
+    }
+}

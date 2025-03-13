@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目展示 - 四季流光</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-circle">四</div>
+                    <h1 class="site-title">四季流光</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="projects.html" class="active">项目</a></li>
+                        <li><a href="learning.html">学习</a></li>
+                        <li><a href="about.html">关于我</a></li>
+                        <li class="season-switcher">
+                            <div class="season-btn season-spring" title="春季主题"></div>
+                            <div class="season-btn season-summer" title="夏季主题"></div>
+                            <div class="season-btn season-autumn" title="秋季主题"></div>
+                            <div class="season-btn season-winter" title="冬季主题"></div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <section class="page-title-section">
+                <h1>项目长卷</h1>
+                <p class="page-subtitle">匠心独运，创造价值。这里收录了我的项目作品，每一个都凝聚着思考与创意，如同四季变幻，各具特色。</p>
+            </section>
+
+            <div class="container">
+                <div class="projects-grid">
+                    <!-- 春季风格项目 -->
+                    <div class="project-card spring-style" data-project-id="1">
+                        <div class="scroll-top"></div>
+                        <div class="card-content">
+                            <h3 class="project-title">春水晴岚</h3>
+                            <p class="project-desc">基于传统山水画法的图像处理工具，将现代照片转化为具有中国传统山水画风格的艺术作品。</p>
+                            <div class="project-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                                <span>进度：85%</span>
+                            </div>
+                            <div class="project-meta">
+                                <span class="project-season">春季</span>
+                                <span class="project-year">2023</span>
+                            </div>
+                        </div>
+                        <div class="scroll-bottom"></div>
+                    </div>
+                    
+                    <!-- 夏季风格项目 -->
+                    <div class="project-card summer-style" data-project-id="2">
+                        <div class="scroll-top"></div>
+                        <div class="card-content">
+                            <h3 class="project-title">夏荷水韵</h3>
+                            <p class="project-desc">专注于水墨动画创作的应用程序，以荷塘夏景为灵感，让用户可以创作富有生命力的水墨动画。</p>
+                            <div class="project-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 100%"></div>
+                                </div>
+                                <span>进度：100%</span>
+                            </div>
+                            <div class="project-meta">
+                                <span class="project-season">夏季</span>
+                                <span class="project-year">2022</span>
+                            </div>
+                        </div>
+                        <div class="scroll-bottom"></div>
+                    </div>
+                    
+                    <!-- 秋季风格项目 -->
+                    <div class="project-card autumn-style" data-project-id="3">
+                        <div class="scroll-top"></div>
+                        <div class="card-content">
+                            <h3 class="project-title">秋枫沉思</h3>
+                            <p class="project-desc">以秋季落叶为视觉主题的数字冥想平台，融合了传统东方哲学与现代心理学理念。</p>
+                            <div class="project-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 100%"></div>
+                                </div>
+                                <span>进度：100%</span>
+                            </div>
+                            <div class="project-meta">
+                                <span class="project-season">秋季</span>
+                                <span class="project-year">2022</span>
+                            </div>
+                        </div>
+                        <div class="scroll-bottom"></div>
+                    </div>
+                    
+                    <!-- 冬季风格项目 -->
+                    <div class="project-card winter-style" data-project-id="4">
+                        <div class="scroll-top"></div>
+                        <div class="card-content">
+                            <h3 class="project-title">冬雪静思</h3>
+                            <p class="project-desc">一款极简设计的个人知识管理工具，以冬季的宁静为灵感，帮助用户整理思绪，构建个人知识体系。</p>
+                            <div class="project-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                                <span>进度：60%</span>
+                            </div>
+                            <div class="project-meta">
+                                <span class="project-season">冬季</span>
+                                <span class="project-year">2023</span>
+                            </div>
+                        </div>
+                        <div class="scroll-bottom"></div>
+                    </div>
+                    
+                    <!-- 额外项目，随机风格 -->
+                    <div class="project-card spring-style" data-project-id="5">
+                        <div class="scroll-top"></div>
+                        <div class="card-content">
+                            <h3 class="project-title">诗词生成器</h3>
+                            <p class="project-desc">基于深度学习的古诗词生成工具，可根据用户输入的意象或情感，创作符合古典诗词格律的作品。</p>
+                            <div class="project-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                                <span>进度：90%</span>
+                            </div>
+                            <div class="project-meta">
+                                <span class="project-season">四季</span>
+                                <span class="project-year">2023</span>
+                            </div>
+                        </div>
+                        <div class="scroll-bottom"></div>
+                    </div>
+                    
+                    <div class="project-card autumn-style" data-project-id="6">
+                        <div class="scroll-top"></div>
+                        <div class="card-content">
+                            <h3 class="project-title">山水音律</h3>
+                            <p class="project-desc">一款将传统山水画转化为音乐的应用，通过分析画作的构图、用墨和意境，生成对应的古典音乐。</p>
+                            <div class="project-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 45%"></div>
+                                </div>
+                                <span>进度：45%</span>
+                            </div>
+                            <div class="project-meta">
+                                <span class="project-season">秋季</span>
+                                <span class="project-year">2023</span>
+                            </div>
+                        </div>
+                        <div class="scroll-bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-quote">随风潜入夜，润物细无声</div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="projects.html">项目</a>
+                    <a href="learning.html">学习</a>
+                    <a href="about.html">关于我</a>
+                </div>
+                <p class="copyright">四季流光 © 2023 - 以四季为笔，绘心灵之光</p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="page-transition">
+        <div class="transition-loader"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 项目页面特定初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 随机给项目卡片设置样式
+            document.querySelectorAll('.project-card').forEach(card => {
+                // 50%的几率保持原样，50%的几率随机样式
+                if (Math.random() > 0.5) {
+                    // 移除所有样式类
+                    card.classList.remove('spring-style', 'summer-style', 'autumn-style', 'winter-style');
+                    // 添加随机样式
+                    card.classList.add(getRandomStyle());
+                }
+            });
+        });
+    </script>
+</body>
+</html>

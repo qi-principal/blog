@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目详情 - 四季流光</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-circle">四</div>
+                    <h1 class="site-title">四季流光</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="projects.html" class="active">项目</a></li>
+                        <li><a href="learning.html">学习</a></li>
+                        <li><a href="about.html">关于我</a></li>
+                        <li class="season-switcher">
+                            <div class="season-btn season-spring" title="春季主题"></div>
+                            <div class="season-btn season-summer" title="夏季主题"></div>
+                            <div class="season-btn season-autumn" title="秋季主题"></div>
+                            <div class="season-btn season-winter" title="冬季主题"></div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <section class="page-title-section">
+                <h1 class="project-title-main">项目详情</h1>
+                <p class="page-subtitle">创意的诞生与成长，记录项目的点滴历程。</p>
+            </section>
+
+            <div class="container">
+                <div class="project-detail">
+                    <div class="project-detail-image"></div>
+                    <div class="project-info">
+                        <h2>项目介绍</h2>
+                        <div class="project-stat">
+                            <div class="stat-item">
+                                <div class="stat-label">开始时间</div>
+                                <div class="stat-value stat-start">2023年3月</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">当前状态</div>
+                                <div class="stat-value stat-status">进行中</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">完成度</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                                <div class="progress-text">85%</div>
+                            </div>
+                        </div>
+                        <p class="project-desc-full">
+                            项目详细描述将根据所选项目动态加载。
+                        </p>
+                        
+                        <div class="milestone-list">
+                            <h3>项目里程碑</h3>
+                            <!-- 里程碑将通过JavaScript动态加载 -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-card">
+                    <div class="scroll-card-content">
+                        <h2>技术亮点</h2>
+                        <div class="ink-divider"></div>
+                        <ul>
+                            <li>创新的图像处理算法，能够精确识别并提取照片中的主要元素</li>
+                            <li>基于深度学习的风格迁移技术，保留原始照片的结构特征</li>
+                            <li>参考传统山水画的笔法和构图原则，生成符合美学规范的作品</li>
+                            <li>自适应调整处理参数，适应不同类型的照片素材</li>
+                            <li>用户友好的界面设计，简化操作流程，提升用户体验</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="scroll-card">
+                    <div class="scroll-card-content">
+                        <h2>项目反思</h2>
+                        <div class="ink-divider"></div>
+                        <p>在开发过程中，我遇到了许多挑战，也有许多收获。最大的挑战在于如何平衡技术可行性与艺术表现力，如何让算法生成的作品既符合传统美学标准，又保留原始照片的特色。</p>
+                        <p>通过不断实验和调整，我逐渐找到了技术与艺术的平衡点。这个过程让我深刻体会到，技术虽然强大，但仍需要人文视角的引导；艺术虽然自由，但也可以借助技术的力量拓展表现边界。</p>
+                        <p>未来，我计划进一步优化算法，添加更多风格选项，并探索将该技术应用于视频处理的可能性。</p>
+                    </div>
+                </div>
+
+                <div class="scroll-card">
+                    <div class="scroll-card-content">
+                        <h2>返回项目列表</h2>
+                        <div class="ink-divider"></div>
+                        <p style="text-align: center;">
+                            <a href="projects.html" style="display: inline-block; padding: 0.8rem 2rem; background-color: var(--primary-color); color: white; border-radius: 4px; text-decoration: none; transition: all 0.3s ease;">
+                                查看更多项目
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-quote">匠心独运，创造非凡</div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="projects.html">项目</a>
+                    <a href="learning.html">学习</a>
+                    <a href="about.html">关于我</a>
+                </div>
+                <p class="copyright">四季流光 © 2023 - 以四季为笔，绘心灵之光</p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="page-transition">
+        <div class="transition-loader"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 项目详情页特定初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProjectDetails();
+        });
+    </script>
+</body>
+</html>
